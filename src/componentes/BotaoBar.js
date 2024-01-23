@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -18,38 +18,34 @@ function BotaoBar() {
     setValue(newValue);
   };
 
+  const navigate = useNavigate();
   return (
     <Footer>
       <BottomNavigation value={value} onChange={handleChange}>
-        <Link to="/Home">
-          <BottomNavigationAction
-            label="Loja"
-            value="Loja"
-            icon={<IoStorefrontOutline />}
-          />
-        </Link>
-
-        <Link to="/Explorar">
-          <BottomNavigationAction
-            label="Explorar"
-            value="Explorar"
-            icon={<MdOutlineManageSearch />}
-          />
-        </Link>
-        <Link to="/Carrinho">
-          <BottomNavigationAction
-            label="Carrinho"
-            value="Carrinho"
-            icon={<AiOutlineShoppingCart />}
-          />
-        </Link>
-        <Link to="/Conta">
-          <BottomNavigationAction
-            label="Conta"
-            value="Conta"
-            icon={<IoPersonOutline />}
-          />
-        </Link>
+        <BottomNavigationAction
+          label="Loja"
+          value="Loja"
+          icon={<IoStorefrontOutline />}
+          onClick={() => navigate("/Home")}
+        />
+        <BottomNavigationAction
+          label="Explorar"
+          value="Explorar"
+          icon={<MdOutlineManageSearch />}
+          onClick={() => navigate("/Explorar")}
+        />
+        <BottomNavigationAction
+          label="Carrinho"
+          value="Carrinho"
+          icon={<AiOutlineShoppingCart />}
+          onClick={() => navigate("/Carrinho")}
+        />
+        <BottomNavigationAction
+          label="Conta"
+          value="Conta"
+          icon={<IoPersonOutline />}
+          onClick={() => navigate("/Conta")}
+        />
       </BottomNavigation>
     </Footer>
   );
