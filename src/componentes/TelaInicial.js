@@ -1,33 +1,29 @@
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 
+import { Link } from "react-router-dom";
+
 import Logo from "../assets/img/logo.png";
 
-function TelaInicial({ visivel, setVisivel }) {
-  return visivel ? (
+function TelaInicial() {
+  return (
     <Container>
       <Main>
         <LogoLoja>
           <img src={Logo} alt="Logo" />
           <p>Nectar</p>
         </LogoLoja>
-
         <Titulo>Bem vindo a nossa Loja</Titulo>
         <Subtitulo>Faça suas compras em apenas uma hora</Subtitulo>
-
-        <Footer>
-          <Button
-            variant="contained"
-            color="success"
-            onClick={() => setVisivel(false)}
-          >
-            Entrar
-          </Button>
-        </Footer>
+        <Link to="/Home">
+          <Footer>
+            <Button variant="contained" color="success">
+              Entrar
+            </Button>
+          </Footer>
+        </Link>
       </Main>
     </Container>
-  ) : (
-    <></>
   );
 }
 
@@ -55,7 +51,7 @@ const LogoLoja = styled.div`
   }
 
   img {
-    width: 30vw;
+    max-width: 30vw;
     height: 15vh;
   }
 `;

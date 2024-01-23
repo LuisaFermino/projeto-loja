@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 import BotaoBar from "./BotaoBar";
 
-function Home() {
+function Carrinho() {
   return (
     <Container>
-      <p>Home</p>
+      <p>Carrinho</p>
       <BotaoBar />
     </Container>
   );
@@ -16,4 +16,4 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-export default Home;
+export default Carrinho;
