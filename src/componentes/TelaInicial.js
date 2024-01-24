@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 
 import { Link } from "react-router-dom";
 
+import "../assets/css/style.css";
 import Logo from "../assets/img/logo.png";
 
 function TelaInicial() {
@@ -17,7 +18,11 @@ function TelaInicial() {
         <Subtitulo>Faça suas compras em apenas uma hora</Subtitulo>
         <Link to="/Home">
           <Footer>
-            <Button variant="contained" color="success">
+            <Button
+              variant="contained"
+              color="success"
+              className="botaoIniciar"
+            >
               Entrar
             </Button>
           </Footer>

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+import NavBar from "./NavBar";
 import BotaoBar from "./BotaoBar";
 
 function Carrinho() {
   return (
     <Container>
-      <p>Carrinho</p>
+      <NavBar />
+
       <BotaoBar />
     </Container>
   );

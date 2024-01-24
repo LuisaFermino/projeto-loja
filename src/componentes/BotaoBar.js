@@ -11,6 +11,7 @@ import { MdOutlineManageSearch } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoPersonOutline } from "react-icons/io5";
 
+import "../assets/css/style.css";
 function BotaoBar() {
   const [value, setValue] = useState("recents");
 
@@ -21,29 +22,34 @@ function BotaoBar() {
   const navigate = useNavigate();
   return (
     <Footer>
-      <BottomNavigation value={value} onChange={handleChange}>
+      <BottomNavigation
+        value={value}
+        onChange={handleChange}
+        className="botaobar"
+      >
         <BottomNavigationAction
           label="Loja"
           value="Loja"
-          icon={<IoStorefrontOutline />}
+          icon={<IoStorefrontOutline className="botao" />}
           onClick={() => navigate("/Home")}
         />
         <BottomNavigationAction
           label="Explorar"
           value="Explorar"
-          icon={<MdOutlineManageSearch />}
+          icon={<MdOutlineManageSearch className="botao" />}
           onClick={() => navigate("/Explorar")}
         />
         <BottomNavigationAction
           label="Carrinho"
           value="Carrinho"
-          icon={<AiOutlineShoppingCart />}
+          icon={<AiOutlineShoppingCart className="botao" />}
           onClick={() => navigate("/Carrinho")}
         />
+
         <BottomNavigationAction
           label="Conta"
           value="Conta"
-          icon={<IoPersonOutline />}
+          icon={<IoPersonOutline className="botao" />}
           onClick={() => navigate("/Conta")}
         />
       </BottomNavigation>

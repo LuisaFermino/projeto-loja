@@ -14,3 +14,8 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+/* Estilos do BotaoBar*/
+.botao {
+  font-size: 20px;
+}

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+import NavBar from "./NavBar";
 import BotaoBar from "./BotaoBar";
 
 function Conta() {
   return (
     <Container>
-      <p>Conta</p>
+      <NavBar />
+
       <BotaoBar />
     </Container>
   );
