@@ -15,7 +15,7 @@ function TelaInicial() {
           <p>Nectar</p>
         </LogoLoja>
         <Titulo>Bem vindo a nossa Loja</Titulo>
-        <Subtitulo>Faça suas compras em apenas uma hora</Subtitulo>
+
         <Link to="/Home">
           <Footer>
             <Button
@@ -52,11 +52,11 @@ const LogoLoja = styled.div`
     font-weight: 700;
     font-family: "Oswald", sans-serif;
     margin-top: 5vh;
-    font-size: 40px;
+    font-size: 42px;
   }
 
   img {
-    max-width: 30vw;
+    max-width: 35vw;
     height: 15vh;
   }
 `;
@@ -66,14 +66,6 @@ const Titulo = styled.p`
   font-size: 20px;
   text-align: center;
   margin-top: 10vh;
-`;
-
-const Subtitulo = styled.p`
-  font-weight: 400;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 12px;
-  margin-top: 2vh;
-  text-align: center;
 `;
 
 const Footer = styled.div`
