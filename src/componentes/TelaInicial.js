@@ -15,7 +15,6 @@ function TelaInicial() {
           <p>Nectar</p>
         </LogoLoja>
         <Titulo>Bem vindo a nossa Loja</Titulo>
-
         <Link to="/Home">
           <Footer>
             <Button

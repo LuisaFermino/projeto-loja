@@ -59,7 +59,7 @@ function BotaoBar() {
 
 const Footer = styled.div`
   position: fixed;
-  bottom: 0;
+  bottom: 0vh;
   left: 0;
 `;
 

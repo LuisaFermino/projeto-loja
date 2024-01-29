@@ -1,10 +1,25 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import NavBar from "./NavBar";
 import BotaoBar from "./BotaoBar";
+import MontarCard from "./MontarCard";
 import imgBanner from "../assets/img/banner.jpg";
 
 function Home() {
+  const [produtos, setProdutos] = useState([]);
+
+  function ProdutosNaTela() {
+    const produto = axios.get(`https://fakestoreapi.com/products`);
+    produto.then(({ data }) => setProdutos(data));
+    produto.catch((err) => alert("deu erro"));
+  }
+
+  useEffect(() => {
+    ProdutosNaTela();
+  }, []);
+
   return (
     <Container>
       <NavBar />
@@ -12,14 +27,9 @@ function Home() {
         <img src={imgBanner} alt="banner" />
       </Banner>
       <Main>
+        <TituloMain>Ofertas Exclusivas</TituloMain>
         <Produtos>
-          <p>Ofertas Exclusivas</p>
-        </Produtos>
-        <Produtos>
-          <p>Mais vendidos</p>
-        </Produtos>
-        <Produtos>
-          <p>Mantimentos</p>
+          <MontarCard produtos={produtos} />
         </Produtos>
       </Main>
       <BotaoBar />
@@ -50,22 +60,24 @@ const Banner = styled.div`
 
 const Main = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   position: fixed;
   top: 35vh;
-  left: 8vw;
+  overflow: scroll;
+`;
+
+const TituloMain = styled.p`
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 5vh;
+  margin-left: 6vw;
 `;
 
 const Produtos = styled.div`
-  margin-top: 1vh;
-  height: 42vh;
-  width: 100vw;
-  p {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    padding-bottom: 15px;
-  }
+  height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export default Home;
