@@ -13,6 +13,8 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoExitOutline } from "react-icons/io5";
+import { IoAlertCircleOutline } from "react-icons/io5";
+import { IoLocationOutline } from "react-icons/io5";
 
 import BotaoBar from "./BotaoBar";
 import FotoAvatar from "../assets/img/avatar.jpg";
@@ -52,6 +54,15 @@ function Conta() {
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+              <IoLocationOutline />
+            </ListItemIcon>
+            <ListItemText primary="Endereços" />
+            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+              <IoIosArrowForward />
+            </ListItemIcon>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
               <IoNotificationsOutline />
             </ListItemIcon>
             <ListItemText primary="Notificações" />
@@ -68,6 +79,15 @@ function Conta() {
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+              <IoAlertCircleOutline />
+            </ListItemIcon>
+            <ListItemText primary="Sobre" />
+            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+              <IoIosArrowForward />
+            </ListItemIcon>
+          </ListItemButton>
         </List>
       </Main>
       <Footer>
@@ -76,7 +96,6 @@ function Conta() {
           <p>Log Out</p>
         </Botao>
       </Footer>
-
       <BotaoBar />
     </Container>
   );
@@ -106,6 +125,7 @@ const Email = styled.p`
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+  margin-top: 0.5vh;
 `;
 
 const Usuario = styled.div`
@@ -125,7 +145,7 @@ const Footer = styled.div`
   align-items: center;
   width: 100vw;
   position: fixed;
-  bottom: 15vh;
+  bottom: 17vh;
   left: 0;
 `;
 
@@ -149,7 +169,7 @@ const Botao = styled.div`
 const Sair = styled(IoExitOutline)`
   color: #2ecc71;
   font-size: 20px;
-  margin-left: 7vw;
+  margin-left: 8vw;
 `;
 
 export default Conta;

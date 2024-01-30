@@ -3,24 +3,33 @@ import styled from "styled-components";
 import NavBar from "./NavBar";
 import BotaoBar from "./BotaoBar";
 
+import imgEletronico from "../assets/img/eletronicos.png";
+import imgJoias from "../assets/img/joias.jpg";
+import imgMasculino from "../assets/img/masculino.jpg";
+import imgFeminino from "../assets/img/femininas.jpg";
+
 function Explorar() {
   return (
     <Container>
       <NavBar />
       <Titulo>Encontre Produtos</Titulo>
       <Main>
-        <Eletronicos>
+        <Categorias>
+          <img src={imgEletronico} alt="Eletronicos" />
           <p>Eletronicos</p>
-        </Eletronicos>
-        <Joias>
+        </Categorias>
+        <Categorias>
+          <img src={imgJoias} alt="Joias" />
           <p>Jóias</p>
-        </Joias>
-        <RoupasM>
+        </Categorias>
+        <Categorias>
+          <img src={imgMasculino} alt="Masculino" />
           <p>Roupas Masculinas</p>
-        </RoupasM>
-        <RoupasF>
+        </Categorias>
+        <Categorias>
+          <img src={imgFeminino} alt="Feminino" />
           <p>Roupas Femininas</p>
-        </RoupasF>
+        </Categorias>
       </Main>
       <BotaoBar />
     </Container>
@@ -44,45 +53,36 @@ const Titulo = styled.div`
 `;
 
 const Main = styled.div`
-  width: 94vw;
+  width: 92vw;
   height: 60vh;
   position: fixed;
-  top: 25vh;
-  left: 3vw;
+  top: 24vh;
+  left: 4vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  img {
+    width: 38vw;
+    height: 20vh;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+  }
 `;
 
-const Eletronicos = styled.div`
+const Categorias = styled.div`
   width: 45vw;
-  height: 25vh;
-  background-color: #e8f8f5;
-  border: 1px solid #53b175b2;
-  border-radius: 20px;
+  height: 27vh;
+  border-bottom: 1px solid #d7dbdd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
-const Joias = styled.div`
-  width: 45vw;
-  height: 25vh;
-  background-color: #fef5e7;
-  border: 1px solid #f8a44cb2;
-  border-radius: 20px;
-`;
-
-const RoupasM = styled.div`
-  width: 45vw;
-  height: 25vh;
-  background-color: #f9ebea;
-  border: 1px solid #f7a593;
-  border-radius: 20px;
-`;
-
-const RoupasF = styled.div`
-  width: 45vw;
-  height: 25vh;
-  background-color: #f4ecf7;
-  border: 1px solid #d3b0e0;
-  border-radius: 20px;
-`;
 export default Explorar;
