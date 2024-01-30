@@ -31,7 +31,7 @@ const Midia = styled.div`
   justify-content: center;
 
   img {
-    height: 12vh;
+    height: 15vh;
     width: 25vw;
   }
 `;
