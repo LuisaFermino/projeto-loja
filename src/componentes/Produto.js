@@ -2,22 +2,26 @@ import styled from "styled-components";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 
-function EstruturaCard({ title, price, image }) {
+function EstruturaProduto({ title, price, image, cart, setCart }) {
+  function AddItem() {
+    setCart([...cart, { title, price, image }]);
+  }
+
   return (
-    <Card>
+    <Produto>
       <Midia>
         <img src={image} alt="ImagemProduto" />
       </Midia>
       <Titulo>{title}</Titulo>
       <Acoes>
         <Preco>R$ {price}</Preco>
-        <Botao></Botao>
+        <Botao onClick={AddItem}></Botao>
       </Acoes>
-    </Card>
+    </Produto>
   );
 }
 
-const Card = styled.div`
+const Produto = styled.div`
   width: 42vw;
   height: 30vh;
   margin-left: 5vw;
@@ -65,4 +69,4 @@ const Botao = styled(IoIosAddCircleOutline)`
   font-size: 24px;
   color: #53b175;
 `;
-export default EstruturaCard;
+export default EstruturaProduto;

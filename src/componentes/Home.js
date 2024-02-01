@@ -4,10 +4,10 @@ import axios from "axios";
 
 import NavBar from "./NavBar";
 import BotaoBar from "./BotaoBar";
-import MontarCard from "./MontarCard";
+import ListaProdutos from "./ListaProdutos";
 import imgBanner from "../assets/img/banner.jpg";
 
-function Home() {
+function Home({ cart, setCart }) {
   const [produtos, setProdutos] = useState([]);
 
   function ProdutosNaTela() {
@@ -29,7 +29,7 @@ function Home() {
       <Main>
         <TituloMain>Ofertas Exclusivas</TituloMain>
         <Produtos>
-          <MontarCard produtos={produtos} />
+          <ListaProdutos produtos={produtos} cart={cart} setCart={setCart} />
         </Produtos>
       </Main>
       <BotaoBar />

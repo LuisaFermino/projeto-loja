@@ -5,8 +5,11 @@ import Home from "./Home.js";
 import Explorar from "./Explorar..js";
 import Carrinho from "./Carrinho.js";
 import Conta from "./Conta.js";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -14,7 +17,7 @@ function App() {
     },
     {
       path: "/Home",
-      element: <Home />,
+      element: <Home cart={cart} setCart={setCart} />,
     },
     {
       path: "/Explorar",
@@ -22,7 +25,7 @@ function App() {
     },
     {
       path: "/Carrinho",
-      element: <Carrinho />,
+      element: <Carrinho cart={cart} />,
     },
     {
       path: "/Conta",

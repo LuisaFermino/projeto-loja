@@ -1,15 +1,17 @@
-import EstruturaCard from "./Card";
+import EstruturaProduto from "./Produto";
 
-function MontarCard({ produtos }) {
+function ListaProdutos({ produtos, cart, setCart }) {
   return produtos[0] ? (
     produtos.map(({ title, price, category, description, image }, indice) => (
-      <EstruturaCard
+      <EstruturaProduto
         key={indice}
         title={title}
         price={price}
         category={category}
         description={description}
         image={image}
+        cart={cart}
+        setCart={setCart}
       />
     ))
   ) : (
@@ -17,4 +19,4 @@ function MontarCard({ produtos }) {
   );
 }
 
-export default MontarCard;
+export default ListaProdutos;
