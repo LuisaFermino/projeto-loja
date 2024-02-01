@@ -75,7 +75,7 @@ const Banner = estilo.div`
 
 const Main = estilo.div`
   width: 100vw;
-  height: 70vh;
+  height: 55vh;
   position: fixed;
   top: 35vh;
   overflow: scroll;

@@ -35,9 +35,13 @@ const Informacoes = styled.div`
 const Titulo = styled.p`
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  font-size: 11px;
-  padding-bottom: 22px;
-  width: 40vw;
+  font-size: 12px;
+  padding-bottom: 30px;
+  width: 50vw;
+  max-width: 40ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Preco = styled.p`
@@ -49,8 +53,9 @@ const Preco = styled.p`
 const Botao = styled(IoCloseOutline)`
   font-size: 22px;
   color: #b3b3b3;
-  position: fixed;
-  right: 6vw;
+  position: relative;
+  left: 6vw;
+  top: 0;
 `;
 
 export default Itens;

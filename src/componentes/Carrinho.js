@@ -17,7 +17,7 @@ function Carrinho({ cart, setCart }) {
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 `;
 
 const Titulo = styled.div`
@@ -34,12 +34,14 @@ const Titulo = styled.div`
 
 const Main = styled.div`
   width: 100vw;
+  height: 80vh;
   position: fixed;
   left: 0;
   top: 10vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  overflow: scroll;
 `;
 
 export default Carrinho;
