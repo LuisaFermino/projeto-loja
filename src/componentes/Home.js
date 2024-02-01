@@ -1,10 +1,13 @@
-import styled from "styled-components";
+import estilo from "styled-components";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import NavBar from "./NavBar";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
 import BotaoBar from "./BotaoBar";
 import ListaProdutos from "./ListaProdutos";
+import Filtro from "./Filtro";
 import imgBanner from "../assets/img/banner.jpg";
 
 function Home({ cart, setCart }) {
@@ -22,7 +25,19 @@ function Home({ cart, setCart }) {
 
   return (
     <Container>
-      <NavBar />
+      <NavBar>
+        <Pesquisa>
+          <Box
+            sx={{
+              width: 200,
+              maxWidth: "100%",
+            }}
+          >
+            <TextField label="Pesquisa" id="Pesquisa" />
+          </Box>
+        </Pesquisa>
+        <Filtro></Filtro>
+      </NavBar>
       <Banner>
         <img src={imgBanner} alt="banner" />
       </Banner>
@@ -37,12 +52,12 @@ function Home({ cart, setCart }) {
   );
 }
 
-const Container = styled.div`
+const Container = estilo.div`
   width: 100vw;
   height: 100vh;
 `;
 
-const Banner = styled.div`
+const Banner = estilo.div`
   width: 100vw;
   height: 15vh;
   display: flex;
@@ -58,7 +73,7 @@ const Banner = styled.div`
   }
 `;
 
-const Main = styled.div`
+const Main = estilo.div`
   width: 100vw;
   height: 70vh;
   position: fixed;
@@ -66,7 +81,7 @@ const Main = styled.div`
   overflow: scroll;
 `;
 
-const TituloMain = styled.p`
+const TituloMain = estilo.p`
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -74,10 +89,21 @@ const TituloMain = styled.p`
   margin-left: 6vw;
 `;
 
-const Produtos = styled.div`
+const Produtos = estilo.div`
   height: 30vh;
   display: flex;
   flex-wrap: wrap;
 `;
 
+const NavBar = estilo.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 15vh;
+`;
+
+const Pesquisa = estilo.div`
+  width: 60vw;
+`;
 export default Home;

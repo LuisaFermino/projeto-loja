@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import NavBar from "./NavBar";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
 import BotaoBar from "./BotaoBar";
 
 import imgEletronico from "../assets/img/eletronicos.png";
@@ -11,12 +13,21 @@ import imgFeminino from "../assets/img/femininas.jpg";
 function Explorar() {
   return (
     <Container>
-      <NavBar />
+      <Navbar>
+        <Box
+          sx={{
+            width: 200,
+            maxWidth: "100%",
+          }}
+        >
+          <TextField label="Pesquisa" id="Pesquisa" />
+        </Box>
+      </Navbar>
       <Titulo>Encontre Produtos</Titulo>
       <Main>
         <Categorias>
           <img src={imgEletronico} alt="Eletronicos" />
-          <p>Eletronicos</p>
+          <p>Eletrônicos</p>
         </Categorias>
         <Categorias>
           <img src={imgJoias} alt="Joias" />
@@ -83,6 +94,14 @@ const Categorias = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+`;
+
+const Navbar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 100vw;
 `;
 
 export default Explorar;
