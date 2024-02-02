@@ -80,11 +80,14 @@ export default function Filtro() {
               value={value}
               onChange={handleChange}
             >
-              <FormControlLabel
-                value="teste"
-                label="teste"
-                control={<Radio />}
-              />
+              {categorias.map((categoria, indice) => (
+                <FormControlLabel
+                  key={indice}
+                  value={categoria}
+                  label={categoria}
+                  control={<Radio />}
+                />
+              ))}
             </RadioGroup>
           </FormControl>
         </DialogContent>
