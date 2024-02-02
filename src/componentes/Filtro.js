@@ -1,4 +1,6 @@
 import estilo from "styled-components";
+import axios from "axios";
+import { useEffect } from "react";
 
 import * as React from "react";
 import Button from "@mui/material/Button";
@@ -8,11 +10,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
 
 import { IoOptionsOutline } from "react-icons/io5";
 
@@ -27,7 +28,18 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 export default function Filtro() {
   const [open, setOpen] = React.useState(false);
-  const [checked, setChecked] = React.useState([0]);
+  const [value, setValue] = React.useState("");
+  const [categorias, setCategorias] = React.useState([]);
+
+  function CategoriasNaTela() {
+    const categoria = axios.get(`https://fakestoreapi.com/products/categories`);
+    categoria.then(({ data }) => setCategorias(data));
+    categoria.catch((err) => alert("deu erro"));
+  }
+
+  useEffect(() => {
+    CategoriasNaTela();
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -36,17 +48,8 @@ export default function Filtro() {
     setOpen(false);
   };
 
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
   return (
@@ -70,43 +73,20 @@ export default function Filtro() {
           Filtrar por Categoria
         </DialogTitle>
         <DialogContent dividers>
-          <List
-            sx={{
-              width: "100%",
-              maxWidth: 360,
-              height: 200,
-              bgcolor: "background.paper",
-              p: 0,
-            }}
-          >
-            {[
-              "Eletrônicos",
-              "Jóias",
-              "Roupas Masculinas",
-              "Roupas Femininas",
-            ].map((value) => {
-              const labelId = `checkbox-list-label-${value}`;
-
-              return (
-                <ListItem key={value} disablePadding>
-                  <ListItemButton
-                    role={undefined}
-                    onClick={handleToggle(value)}
-                    dense
-                  >
-                    <Checkbox
-                      edge="start"
-                      checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": labelId }}
-                    />
-                    <ListItemText id={labelId} primary={`${value}`} />
-                  </ListItemButton>
-                </ListItem>
-              );
-            })}
-          </List>
+          <FormControl>
+            <RadioGroup
+              aria-labelledby="demo-controlled-radio-buttons-group"
+              name="controlled-radio-buttons-group"
+              value={value}
+              onChange={handleChange}
+            >
+              <FormControlLabel
+                value="teste"
+                label="teste"
+                control={<Radio />}
+              />
+            </RadioGroup>
+          </FormControl>
         </DialogContent>
         <DialogActions sx={{ height: 40 }}>
           <Button
