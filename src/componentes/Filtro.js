@@ -26,37 +26,43 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function Filtro() {
+export default function Filtro({ filtro, setFiltro, setProdutos }) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
   const [categorias, setCategorias] = React.useState([]);
 
-  function CategoriasNaTela() {
+  function ListadeCategorias() {
     const categoria = axios.get(`https://fakestoreapi.com/products/categories`);
     categoria.then(({ data }) => setCategorias(data));
     categoria.catch((err) => alert("deu erro"));
   }
 
+  function CategoriaIndividual() {
+    const categoriaFiltro = axios.get(
+      `https://fakestoreapi.com/products/category/${filtro}`
+    );
+    categoriaFiltro.then(({ data }) => setProdutos(data));
+    categoriaFiltro.catch((err) => alert("deu erro"));
+    setOpen(false);
+  }
+
   useEffect(() => {
-    CategoriasNaTela();
+    ListadeCategorias();
+    CategoriaIndividual();
   }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setFiltro(event.target.value);
   };
 
   return (
     <React.Fragment>
       <IconeFiltro variant="outlined" onClick={handleClickOpen}></IconeFiltro>
       <BootstrapDialog
-        onClose={handleClose}
+        onClose={CategoriaIndividual}
         aria-labelledby="customized-dialog-title"
         open={open}
       >
@@ -77,7 +83,7 @@ export default function Filtro() {
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
-              value={value}
+              value={filtro}
               onChange={handleChange}
             >
               {categorias.map((categoria, indice) => (
@@ -94,7 +100,7 @@ export default function Filtro() {
         <DialogActions sx={{ height: 40 }}>
           <Button
             autoFocus
-            onClick={handleClose}
+            onClick={CategoriaIndividual}
             sx={{ fontSize: 12, fontWeight: 700 }}
           >
             Filtrar

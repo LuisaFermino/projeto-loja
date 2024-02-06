@@ -12,6 +12,7 @@ import imgBanner from "../assets/img/banner.jpg";
 
 function Home({ cart, setCart }) {
   const [produtos, setProdutos] = useState([]);
+  const [filtro, setFiltro] = useState("");
 
   function ProdutosNaTela() {
     const produto = axios.get(`https://fakestoreapi.com/products`);
@@ -36,7 +37,11 @@ function Home({ cart, setCart }) {
             <TextField label="Pesquisa" id="Pesquisa" />
           </Box>
         </Pesquisa>
-        <Filtro></Filtro>
+        <Filtro
+          filtro={filtro}
+          setFiltro={setFiltro}
+          setProdutos={setProdutos}
+        ></Filtro>
       </NavBar>
       <Banner>
         <img src={imgBanner} alt="banner" />
