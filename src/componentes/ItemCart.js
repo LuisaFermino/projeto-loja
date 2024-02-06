@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 import { IoCloseOutline } from "react-icons/io5";
 
-function Itens({ title, price, image }) {
+function Itens({ title, price, image, setCart }) {
+  function RemoveItem() {
+    setCart("");
+  }
   return (
     <ItemCard>
       <img src={image} alt="Imagem Produto" />
@@ -10,7 +13,7 @@ function Itens({ title, price, image }) {
         <Titulo>{title}</Titulo>
         <Preco>R$ {price}</Preco>
       </Informacoes>
-      <Botao></Botao>
+      <Botao onClick={RemoveItem}></Botao>
     </ItemCard>
   );
 }

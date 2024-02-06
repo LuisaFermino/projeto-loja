@@ -25,7 +25,7 @@ function App() {
     },
     {
       path: "/Carrinho",
-      element: <Carrinho cart={cart} />,
+      element: <Carrinho cart={cart} setCart={setCart} />,
     },
     {
       path: "/Conta",

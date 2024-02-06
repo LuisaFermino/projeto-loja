@@ -9,6 +9,7 @@ function ListaCarrinho({ cart, setCart }) {
         price={price}
         image={image}
         setCart={setCart}
+        cart={cart}
       />
     ))
   ) : (
