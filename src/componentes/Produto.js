@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 
-function EstruturaProduto({ title, price, image, cart, setCart }) {
+function EstruturaProduto({ title, price, image, id, cart, setCart }) {
   function AddItem() {
-    setCart([...cart, { title, price, image }]);
+    setCart([...cart, { title, price, image, id }]);
   }
 
   return (

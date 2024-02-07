@@ -6,6 +6,7 @@ function Itens({ title, price, image, cart, setCart, id }) {
   function RemoveItem() {
     const update = cart.filter((item) => item.id !== id);
     setCart(update);
+    console.log(cart);
   }
   return (
     <ItemCard>
