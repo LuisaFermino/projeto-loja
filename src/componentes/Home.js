@@ -87,11 +87,12 @@ const Main = estilo.div`
 `;
 
 const TituloMain = estilo.p`
-  font-family: "Open Sans", sans-serif;
+  font-family: "Protest Riot", sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   padding-bottom: 5vh;
   margin-left: 6vw;
+  letter-spacing: 2px;
 `;
 
 const Produtos = estilo.div`

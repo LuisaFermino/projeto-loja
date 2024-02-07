@@ -2,7 +2,7 @@ import Itens from "./ItemCart";
 
 function ListaCarrinho({ cart, setCart }) {
   return cart[0] ? (
-    cart.map(({ title, price, image }, indice) => (
+    cart.map(({ title, price, image, id }, indice) => (
       <Itens
         key={indice}
         title={title}
@@ -10,6 +10,7 @@ function ListaCarrinho({ cart, setCart }) {
         image={image}
         setCart={setCart}
         cart={cart}
+        id={id}
       />
     ))
   ) : (

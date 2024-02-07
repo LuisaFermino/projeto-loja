@@ -6,42 +6,55 @@ import ListaCarrinho from "./ListaCarrinho";
 function Carrinho({ cart, setCart }) {
   return (
     <Container>
-      <Titulo>Meu Carrinho</Titulo>
-      <Main>
-        <ListaCarrinho cart={cart} setCart={setCart} />
-      </Main>
-      <BotaoBar />
+      <Nav>
+        <Titulo>Meu Carrinho</Titulo>
+      </Nav>
+
+      <ContainerCarrinho>
+        <Main>
+          <ListaCarrinho cart={cart} setCart={setCart} />
+        </Main>
+        <BotaoBar />
+      </ContainerCarrinho>
     </Container>
   );
 }
 
 const Container = styled.div`
   width: 100vw;
-  height: 100%;
+  height: 100vh;
 `;
-
-const Titulo = styled.div`
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
+const Nav = styled.div`
   width: 100vw;
-  height: 5vh;
-  position: fixed;
-  top: 5vh;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f3f4;
+  z-index: 1000;
   border-bottom: 1px solid #d7dbdd;
 `;
 
-const Main = styled.div`
+const Titulo = styled.div`
+  font-family: "Protest Riot", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+`;
+
+const ContainerCarrinho = styled.div`
   width: 100vw;
-  height: 80vh;
-  position: fixed;
+  height: 82vh;
+  overflow: scroll;
+`;
+
+const Main = styled.div`
+  position: relative;
   left: 0;
-  top: 10vh;
+  top: 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  overflow: scroll;
 `;
 
 export default Carrinho;
