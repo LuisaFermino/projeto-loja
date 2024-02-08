@@ -1,19 +1,26 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 import BotaoBar from "./BotaoBar";
 import ListaCarrinho from "./ListaCarrinho";
 
 function Carrinho({ cart, setCart }) {
+  const [mensagem, setMensagem] = useState("");
+
   return (
     <Container>
       <Nav>
         <Titulo>Meu Carrinho</Titulo>
       </Nav>
-
       <ContainerCarrinho>
         <Main>
-          <ListaCarrinho cart={cart} setCart={setCart} />
+          <ListaCarrinho cart={cart} setCart={setCart} mensagem={mensagem} />
         </Main>
+        <Footer>
+          <Finalizar onClick={() => setMensagem}>
+            <p>Finalizar</p>
+          </Finalizar>
+        </Footer>
         <BotaoBar />
       </ContainerCarrinho>
     </Container>
@@ -26,11 +33,10 @@ const Container = styled.div`
 `;
 const Nav = styled.div`
   width: 100vw;
-  height: 8vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2f3f4;
   z-index: 1000;
   border-bottom: 1px solid #d7dbdd;
 `;
@@ -55,6 +61,35 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  position: fixed;
+  bottom: 10vh;
+  left: 0;
+`;
+
+const Finalizar = styled.div`
+  background-color: #2ecc71;
+  border-radius: 20px;
+  width: 50vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 5px #d7dbdd;
+
+  p {
+    color: #e5e7e9;
+    font-family: "Protest Riot", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  }
 `;
 
 export default Carrinho;
