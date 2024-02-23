@@ -2,18 +2,10 @@ import styled from "styled-components";
 
 import { IoCloseOutline } from "react-icons/io5";
 
-function Itens({ title, price, image, cart, setCart, id, mensagem }) {
-  mensagem = encodeURI(`
-  Produto: ${title}
-  Preço: R$ ${price}
-  *Valor total: R$ ${price}*
-  `);
-  window.location.href = `https://wa.me/5514996047024?text=${mensagem}`;
-
+function Itens({ title, price, image, cart, setCart, id }) {
   function RemoveItem() {
     const update = cart.filter((item) => item.id !== id);
     setCart(update);
-    console.log(cart);
   }
   return (
     <ItemCard>

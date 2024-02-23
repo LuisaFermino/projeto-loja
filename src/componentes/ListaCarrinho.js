@@ -1,6 +1,6 @@
 import Itens from "./ItemCart";
 
-function ListaCarrinho({ cart, setCart, mensagem }) {
+function ListaCarrinho({ cart, setCart }) {
   return cart[0] ? (
     cart.map(({ title, price, image, id }, indice) => (
       <Itens
@@ -11,7 +11,6 @@ function ListaCarrinho({ cart, setCart, mensagem }) {
         image={image}
         setCart={setCart}
         cart={cart}
-        mensagem={mensagem}
       />
     ))
   ) : (

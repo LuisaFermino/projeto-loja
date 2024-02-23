@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { useState } from "react";
+// import { useState } from "react";
 
 import BotaoBar from "./BotaoBar";
 import ListaCarrinho from "./ListaCarrinho";
+import ListaMensagem from "./ListaMensagem";
 
 function Carrinho({ cart, setCart }) {
-  const [mensagem, setMensagem] = useState("");
-
   return (
     <Container>
       <Nav>
@@ -14,10 +13,10 @@ function Carrinho({ cart, setCart }) {
       </Nav>
       <ContainerCarrinho>
         <Main>
-          <ListaCarrinho cart={cart} setCart={setCart} mensagem={mensagem} />
+          <ListaCarrinho cart={cart} setCart={setCart} />
         </Main>
         <Footer>
-          <Finalizar onClick={() => setMensagem}>
+          <Finalizar onClick={ListaMensagem}>
             <p>Finalizar</p>
           </Finalizar>
         </Footer>
