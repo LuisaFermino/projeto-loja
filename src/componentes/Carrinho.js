@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import BotaoBar from "./BotaoBar";
 import ListaCarrinho from "./ListaCarrinho";
-import ListaMensagem from "./ListaMensagem";
+import EnviaMensagem from "./EnviaMensagem";
 
 function Carrinho({ cart, setCart }) {
   return (
@@ -16,7 +16,7 @@ function Carrinho({ cart, setCart }) {
           <ListaCarrinho cart={cart} setCart={setCart} />
         </Main>
         <Footer>
-          <Finalizar onClick={ListaMensagem}>
+          <Finalizar onClick={EnviaMensagem}>
             <p>Finalizar</p>
           </Finalizar>
         </Footer>
