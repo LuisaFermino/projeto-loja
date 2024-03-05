@@ -16,7 +16,7 @@ function Carrinho({ cart, setCart }) {
           <ListaCarrinho cart={cart} setCart={setCart} />
         </Main>
         <Footer>
-          <Finalizar onClick={EnviaMensagem}>
+          <Finalizar onClick={() => EnviaMensagem(cart)}>
             <p>Finalizar</p>
           </Finalizar>
         </Footer>
