@@ -4,7 +4,6 @@ function EnviaMensagem(cart) {
   *Itens do Carrinho*
  
   ---------------------------
-  
  `;
 
   cart.forEach((item) => {
@@ -14,7 +13,6 @@ function EnviaMensagem(cart) {
   *Preço: R$ ${item.price}* 
     
   ---------------------------
- 
     `;
     valorTotal += item.price;
   });
