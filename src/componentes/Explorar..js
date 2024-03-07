@@ -64,30 +64,30 @@ const Titulo = styled.div`
 `;
 
 const Main = styled.div`
-  width: 92vw;
+  width: 85vw;
   height: 60vh;
-  position: fixed;
-  top: 24vh;
-  left: 4vw;
+  position: relative;
+  top: 22vh;
+  left: 8vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   img {
-    width: 38vw;
-    height: 20vh;
+    width: 32vw;
+    height: 18vh;
   }
 
   p {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
   }
 `;
 
 const Categorias = styled.div`
-  width: 45vw;
+  width: 40vw;
   height: 27vh;
   border-bottom: 1px solid #d7dbdd;
   display: flex;
@@ -102,6 +102,7 @@ const Navbar = styled.div`
   align-items: center;
   height: 15vh;
   width: 100vw;
+  position: fixed;
 `;
 
 export default Explorar;

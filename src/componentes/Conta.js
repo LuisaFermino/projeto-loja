@@ -23,7 +23,7 @@ function Conta() {
   return (
     <Container>
       <Header>
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={3}>
           <Avatar alt="Remy Sharp" src={FotoAvatar} />
         </Stack>
         <Usuario>
@@ -39,52 +39,52 @@ function Conta() {
               <IoBagHandleOutline />
             </ListItemIcon>
             <ListItemText primary="Pedidos" />
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <CiCreditCard2 />
             </ListItemIcon>
             <ListItemText primary="Meus Detalhes" />
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoLocationOutline />
             </ListItemIcon>
             <ListItemText primary="Endereços" />
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoNotificationsOutline />
             </ListItemIcon>
             <ListItemText primary="Notificações" />
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosHelpCircleOutline />
             </ListItemIcon>
             <ListItemText primary="Ajuda" />
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoAlertCircleOutline />
             </ListItemIcon>
             <ListItemText primary="Sobre" />
-            <ListItemIcon sx={{ fontSize: 20, color: "#626567" }}>
+            <ListItemIcon sx={{ fontSize: 22, color: "#626567" }}>
               <IoIosArrowForward />
             </ListItemIcon>
           </ListItemButton>
@@ -117,12 +117,12 @@ const Header = styled.div`
 `;
 
 const Nome = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
 `;
 const Email = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   margin-top: 0.5vh;
@@ -136,7 +136,7 @@ const Main = styled.div`
   width: 100vw;
   height: 50vh;
   position: fixed;
-  top: 20vh;
+  top: 18vh;
   left: 5vw;
 `;
 const Footer = styled.div`
@@ -145,14 +145,14 @@ const Footer = styled.div`
   align-items: center;
   width: 100vw;
   position: fixed;
-  bottom: 17vh;
+  bottom: 15vh;
   left: 0;
 `;
 
 const Botao = styled.div`
   background-color: #e5e7e9;
   border-radius: 20px;
-  width: 70vw;
+  width: 55vw;
   height: 8vh;
   display: flex;
   align-items: center;
@@ -162,7 +162,7 @@ const Botao = styled.div`
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    margin-left: 12vw;
+    margin-left: 8vw;
   }
 `;
 

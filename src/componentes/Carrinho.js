@@ -38,6 +38,8 @@ const Nav = styled.div`
   justify-content: center;
   z-index: 1000;
   border-bottom: 1px solid #d7dbdd;
+  position: fixed;
+  background-color: white;
 `;
 
 const Titulo = styled.div`
@@ -45,6 +47,7 @@ const Titulo = styled.div`
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 3px;
+  background-color: white;
 `;
 
 const ContainerCarrinho = styled.div`
@@ -56,7 +59,7 @@ const ContainerCarrinho = styled.div`
 const Main = styled.div`
   position: relative;
   left: 0;
-  top: 0;
+  top: 10vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
