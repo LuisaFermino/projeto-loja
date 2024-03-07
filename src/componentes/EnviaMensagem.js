@@ -1,17 +1,16 @@
 function EnviaMensagem(cart) {
   let mensagem = `
-  Itens do Carrinho:
+  *Itens do Carrinho*
  
-  ---------------------------
+    ---------------------------
  
  `;
   cart.forEach((item) => {
     mensagem += `
-    
-    ${item.title} - ${item.price}
+    Produto: ${item.title} 
+    Preço: ${item.price}
     
     ---------------------------
- 
     `;
   });
 
