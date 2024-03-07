@@ -107,6 +107,7 @@ const NavBar = estilo.div`
   align-items: center;
   width: 100vw;
   height: 15vh;
+  position: fixed;
 `;
 
 const Pesquisa = estilo.div`

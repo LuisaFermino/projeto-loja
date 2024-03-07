@@ -66,7 +66,7 @@ const Titulo = styled.div`
 const Main = styled.div`
   width: 85vw;
   height: 60vh;
-  position: relative;
+  position: fixed;
   top: 22vh;
   left: 8vw;
   display: flex;
@@ -87,7 +87,7 @@ const Main = styled.div`
 `;
 
 const Categorias = styled.div`
-  width: 40vw;
+  width: 36vw;
   height: 27vh;
   border-bottom: 1px solid #d7dbdd;
   display: flex;
