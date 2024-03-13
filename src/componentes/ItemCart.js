@@ -8,17 +8,17 @@ function Itens({ title, price, image, cart, setCart, id }) {
     setCart(update);
   }
   return (
-    <ItemCard>
+    <ItemCart>
       <img src={image} alt="Imagem Produto" />
       <Informacoes>
         <Titulo>{title}</Titulo>
         <Preco>R$ {price}</Preco>
       </Informacoes>
       <Botao onClick={RemoveItem}></Botao>
-    </ItemCard>
+    </ItemCart>
   );
 }
-const ItemCard = styled.div`
+const ItemCart = styled.div`
   width: 90vw;
   height: 15vh;
   display: flex;

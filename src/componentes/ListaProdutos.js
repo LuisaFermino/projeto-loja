@@ -1,9 +1,9 @@
-import EstruturaProduto from "./Produto";
+import Produto from "./Produto";
 
 function ListaProdutos({ produtos, cart, setCart }) {
   return produtos[0] ? (
     produtos.map(({ title, price, image, id }, indice) => (
-      <EstruturaProduto
+      <Produto
         key={indice}
         title={title}
         price={price}

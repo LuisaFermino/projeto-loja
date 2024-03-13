@@ -1,7 +1,7 @@
 function EnviaMensagem(cart) {
   let valorTotal = 0;
   let mensagem = `
-   *Itens do Carrinho*
+  *Itens do Carrinho*
  
   ---------------------------
  `;
